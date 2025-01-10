@@ -117,6 +117,15 @@ class LoginView: UIView {
         return button
     }()
     
+    let registerHereLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemBlue
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.textAlignment = .left
+        label.text = "Não tem conta? Cadastre-se aqui!"
+        return label
+    }()
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -136,6 +145,8 @@ class LoginView: UIView {
         addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(loginButtonTest)
+        addSubview(registerHereLabel)
+
     }
     
     private func setupConstraints() {
@@ -167,7 +178,12 @@ class LoginView: UIView {
             loginButtonTest.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
             loginButtonTest.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             loginButtonTest.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            loginButtonTest.heightAnchor.constraint(equalToConstant: 50)
+            loginButtonTest.heightAnchor.constraint(equalToConstant: 50),
+            
+            registerHereLabel.topAnchor.constraint(equalTo: loginButtonTest.bottomAnchor, constant: 10),
+            registerHereLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            registerHereLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            registerHereLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
