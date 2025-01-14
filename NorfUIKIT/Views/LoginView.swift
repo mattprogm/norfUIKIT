@@ -6,6 +6,7 @@ class LoginView: UIView {
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "norfLogoPreto")
+//        imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         // Adicionando sombra à imagem
@@ -117,12 +118,15 @@ class LoginView: UIView {
         return button
     }()
     
+    
     let registerHereLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemBlue
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .left
-        label.text = "Não tem conta? Cadastre-se aqui!"
+        label.text = "Esqueci minha senha?"
+        label.isUserInteractionEnabled = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -175,15 +179,17 @@ class LoginView: UIView {
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
             
-            loginButtonTest.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
+            registerHereLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10),
+            registerHereLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            registerHereLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            registerHereLabel.heightAnchor.constraint(equalToConstant: 15),
+            
+            loginButtonTest.topAnchor.constraint(equalTo: registerHereLabel.bottomAnchor, constant: 10),
             loginButtonTest.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             loginButtonTest.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             loginButtonTest.heightAnchor.constraint(equalToConstant: 50),
             
-            registerHereLabel.topAnchor.constraint(equalTo: loginButtonTest.bottomAnchor, constant: 10),
-            registerHereLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            registerHereLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            registerHereLabel.heightAnchor.constraint(equalToConstant: 50)
+
         ])
     }
     

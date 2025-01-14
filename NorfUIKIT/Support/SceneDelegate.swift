@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let vc = LoginViewController()
-        window.rootViewController = vc
+        let navigationController = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigationController
         self.window = window
         self.window?.makeKeyAndVisible()
         //remove main in build target and in infoplist - throw code on scene
